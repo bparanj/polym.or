@@ -5,5 +5,10 @@
   <p><%= @photo.name %></p>
 </div>
 
+<h2>Comments</h2>
+
+<%= render "comments/comments" %>
+<%= render "comments/form" %>
+
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

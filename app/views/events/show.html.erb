@@ -20,6 +20,11 @@
   <%= @event.description %>
 </p>
 
+<h2>Comments</h2>
+
+<%= render "comments/comments" %>
+<%= render "comments/form" %>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
