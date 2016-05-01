@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PolymOr</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	  
+    <div id="container">
+      <div id="nav">
+        <%= link_to_unless_current "Articles", articles_path %> |
+        <%= link_to_unless_current "Photos", photos_path %> |
+        <%= link_to_unless_current "Events", events_path %>
+      </div>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
+      <%= yield %>
+    </div>
+
+
+  </body>
+</html>
